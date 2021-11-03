@@ -1,0 +1,18 @@
+[
+  {
+    "post_id": "1",
+    "question_id": "2",
+    "answer": "215"
+
+  },
+  {
+    "post_id": "2",
+    "question_id": "2",
+    "answer": "155"
+  },
+  {
+    "post_id": "3",
+    "question_id": "1",
+    "answer": "5"
+  }
+]

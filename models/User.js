@@ -26,27 +26,56 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      isEmail: true,
+      allowNull: false,
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    zip: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    role_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   },
   {
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
+      beforeCreate: async (newClientData) => {
+        newClientData.password = await bcrypt.hash(newClientData.password, 10);
+        return newClientData;
       },
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(
-          updatedUserData.password,
+      beforeUpdate: async (newClientData) => {
+        newClientData.password = await bcrypt.hash(
+          newClientData.password,
           10
         );
-        return updatedUserData;
+        return newClientData;
       },
     },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "User",
+    modelName: "user",
   }
 );
 

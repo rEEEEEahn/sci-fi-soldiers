@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Lose 50 pounds",
+    "goal_type_id": "1",
+    "client_id": "1",
+    "professional_id": "1"
+  },
+  {
+    "name": "Lose 100 pounds",
+    "goal_type_id": "1",
+    "client_id": "2",
+    "professional_id": "1"
+  },
+  {
+    "name": "Get pain level down to 3",
+    "goal_type_id": "2",
+    "client_id": "3",
+    "professional_id": "2"
+  }
+]

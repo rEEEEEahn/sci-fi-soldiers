@@ -1,14 +1,35 @@
 [
   {
+    "username": "joe",
+    "password": "password123",
+    "first_name": "Joe",
+    "last_name": "Lewis",
+    "email": "joe_lewis@email.com",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92109",
+    "role_id": "1"
+  },
+  {
     "username": "harry",
-    "password": "password123"
+    "password": "password123",
+    "first_name": "Harry",
+    "last_name": "Hood",
+    "email": "harry_hood@email.com",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92109",
+    "role_id": "2"
   },
   {
-    "username": "hermione",
-    "password": "password123"
-  },
-  {
-    "username": "hagrid",
-    "password": "password123"
+    "username": "wayne",
+    "password": "password123",
+    "first_name": "Wayne",
+    "last_name": "Lewis",
+    "email": "wayne_lewis@email.com",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "92109",
+    "role_id": "1"
   }
 ]
