@@ -1,0 +1,14 @@
+[
+  {
+    "professional_id": "1",
+    "services_id": "1"
+  },
+  {
+    "professional_id": "2",
+    "services_id": "1"
+  },
+  {
+    "professional_id": "3",
+    "services_id": "2"
+  }
+]
