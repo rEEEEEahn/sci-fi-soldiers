@@ -1,0 +1,14 @@
+[
+  {
+    "user_id": "1",
+    "calendly": "https://calendly.com/yourname"
+  },
+  {
+    "user_id": "2",
+    "calendly": "https://calendly.com/hisname"
+  },
+  {
+    "user_id": "3",
+    "calendly": "https://calendly.com/hername"
+  }
+]

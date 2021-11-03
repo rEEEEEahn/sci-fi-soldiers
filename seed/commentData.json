@@ -1,0 +1,20 @@
+[
+  {
+    "post_id": "1",
+    "user_id": "1",
+    "date": "11/02/2021",
+    "body": "You're doing a great job!"
+  },
+  {
+    "post_id": "2",
+    "user_id": "2",
+    "date": "11/03/2021",
+    "body": "Keep it up!"
+  },
+  {
+    "post_id": "3",
+    "user_id": "2",
+    "date": "11/03/2021",
+    "body": "Push it!"
+  }
+]
