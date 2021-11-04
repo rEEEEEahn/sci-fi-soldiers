@@ -77,3 +77,4 @@ However, you must provide a credit card to use the service.
 
 Running `heroku run npm run seed` will run the seed script in Heroku if your
 seeds are required for production.
+# book-fitness

@@ -69,23 +69,20 @@
                     </div>
                 </div>
             </div>
-            <!-- profile menu area end -->
-
-            <!-- sendary menu start -->
-            <div class="menu-secondary">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="secondary-menu-wrapper bg-white">
-                                <div class="page-title-inner">
-                                    <h4 class="page-title">about</h4>
-                                    
-                                </div>
-                                <div class="secondary-menu-wrapper bg-black">
-                                    <nav>
-                                        <ul class="page-title">
-                                            <li><a href="#"><span>Website</span></a></li>
-                                            <!-- <li class="d-inline-block d-md-none"><a href="profile.html">edit profile</a></li> -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 order-1 order-lg-1">
+                        <aside class="widget-area profile-sidebar">
+                            <!-- widget single item start -->
+                            <div class="card widget-item">
+                                <h4 class="widget-title">{{username}}</h4>
+                                <div class="widget-body">
+                                    <div class="about-author">
+                                        <p>{{username}}</p>
+                                        <ul class="author-into-list">
+                                            <li><a href="#"><i class="bi bi-office-bag"></i>Service Type: Trainer</a></li>
+                                            <li><a href="#"><i class="bi bi-location-pointer"></i>San Diego</a></li>
+                                            <li><a href="#"><i class="bi bi-heart-beat"></i>Website</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -110,6 +107,13 @@
                                         <li><a href="#three" data-bs-toggle="tab">Qualification</a></li>
                                     </ul>
                                 </div>
+                            </div>
+                            <!-- post title start -->
+                            <div class="post-content">
+                                <p class="post-desc">
+                                   {{user.username}}
+                                </p>
+
                             </div>
                         </div>
                         <div class="col-lg-9">
