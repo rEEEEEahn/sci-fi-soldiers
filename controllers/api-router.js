@@ -3,7 +3,7 @@ const withAuth = require("../util/withAuth");
 
 const router = require("express").Router();
 
-// POST 	/api/users 			create user, client or profession and login
+// POST /api/users	create user, client or profession and login
 router.post("/users", async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -89,6 +89,7 @@ router.post('/comments', withAuth, async (req, res) => {
         ...req.body,
         userId: req.session.userId,
       });
+      console.log(newComment)
       res.json(newComment);
     } catch (err) {
       res.status(500).json(err);
