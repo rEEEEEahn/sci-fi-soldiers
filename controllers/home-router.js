@@ -4,8 +4,6 @@ const { User } = require('../models');
 // use withAuth middleware to redirect from protected routes.
 const withAuth = require("../util/withAuth");
 
-
-
 router.get('/', async (req, res) => {
   try {
     let user;
