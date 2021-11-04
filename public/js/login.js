@@ -31,5 +31,5 @@ const handleLoginSubmit = async (event) => {
 };
 
 document
-  .querySelector('.login-form')
+  .querySelector('.signup-inner--form')
   .addEventListener('submit', handleLoginSubmit);

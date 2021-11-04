@@ -52,7 +52,7 @@ router.get("/professionals", async (req, res) => {
   });
 
  
-  // GET 	/new-goal?		auth	Form to allow a client to add a goal. Must be logged 
+  // GET 	/new-goal/?clientid={{id}}		auth	Form to allow a client to add a goal. Must be logged 
   router.get("/new-goal", withAuth, async (req, res) => {
     res.end();
   });
