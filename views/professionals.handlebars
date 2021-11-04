@@ -1,6 +1,19 @@
 <h1>Professional Profiles</h1>
-<ul>
-  {{#each users}}
-    <li>{{username}}</li>
-  {{/each}}
-</ul>
+<div class="friends-section mt-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="content-box friends-zone">
+          <div class="row mt--20 friends-list" style="position: relative; height: 4600px;">
+            <div class="col-lg-3 col-sm-6 recently request" style="position: absolute; left: 0px; top: 0px;">
+            {{#each users as |user|}}
+            {{> userdetails }}
+            {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

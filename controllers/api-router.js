@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Goal, Comment, Post } = require("../models");
 const withAuth = require("../util/withAuth");
 
 const router = require("express").Router();
@@ -62,17 +62,37 @@ router.get("/users/logout", (req, res) => {
 
 // POST 	/api/goals		auth	creates a new goal for logged in client
 router.post("/goals", withAuth, async (req, res) => {
-  res.json({});
+    const { body } = req;
+    try {
+      const newGoal = await Goal.create({ ...body, userId: req.session.userId });
+      res.json(newGoal);
+    } catch (err) {
+      res.status(500).json(err);
+    }
 });
 
 // POST 	/api/posts		auth	creates a new post
 router.post("/posts", withAuth, async (req, res) => {
-  res.json({});
+    const { body } = req;
+    try {
+      const newPost = await Post.create({ ...body, userId: req.session.userId });
+      res.json(newPost);
+    } catch (err) {
+      res.status(500).json(err);
+    }
 });
 
 // POST 	/api/comments      	auth    adds a comment to a specific post
-router.post("/comments", withAuth, async (req, res) => {
-  res.json({});
-});
+router.post('/comments', withAuth, async (req, res) => {
+    try {
+      const newComment = await Comment.create({
+        ...req.body,
+        userId: req.session.userId,
+      });
+      res.json(newComment);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 module.exports = router;
