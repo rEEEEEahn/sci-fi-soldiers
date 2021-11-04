@@ -1,0 +1,127 @@
+
+    <main>
+
+        <div class="main-wrapper">
+            <div class="profile-banner-large bg-img" data-bg="assets/images/banner/profile-banner.jpg">
+            </div>
+            <div class="profile-menu-area bg-white">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="profile-picture-box">
+                                <figure class="profile-picture">
+                                    <a href="profile.html">
+                                        <img src="assets/images/profile/profile-1.jpg" alt="profile picture">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 order-1 order-lg-1">
+                        <aside class="widget-area profile-sidebar">
+                            <!-- widget single item start -->
+                            <div class="card widget-item">
+                                <h4 class="widget-title">{{username}}</h4>
+                                <div class="widget-body">
+                                        <ul class="author-into-list">
+                                            <li><a href="#"><i class="bi bi-office-bag"></i>Service Type: Trainer</a></li>
+                                            <li><a href="#"><i class="bi bi-location-pointer"></i>{{location}}</a></li>
+                                            <li><a href="#"><i class="bi bi-heart-beat"></i>Website</a></li>
+                                        </ul>
+                                        <div class="calendly-inline-widget" style="min-width:200px;height:400px;" data-auto-load="false">
+                                            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                                            <script>
+                                                Calendly.initInlineWidget({
+                                                url: 'https://calendly.com/stan1651'
+                                                });
+                                            </script>
+                                    </div>
+                                    
+                                </div>
+                    
+                            </div>
+                            
+                            <!-- widget single item end -->
+                        </aside>
+                    </div>
+
+
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        {{#each posts}}
+                        <div class="card" >
+                              <article class=''>
+                                <div class='card-header flex-row justify-space-between'>
+                            <div class="post-title d-flex align-items-center">
+                                <div class="posted-author">
+                                    <h6 class="author"><a href="/post/{{id}}">{{username}}</a></h6>    <!--CHANGE HREF TO protfile link-->
+                                </div>
+                            </div>
+<!--add comment button-->
+                                  <div>
+                                    goal
+                                    {{goals}}
+                                    on
+                                    {{format_date createdAt}}
+                                  </div>
+                                </div>
+                                <div class='card-body'>
+                                  oi mate i lost 200 lb
+                                </div>
+                                <ul class="comment-share-meta">
+                                    <li>
+                                        <button class="post-comment">
+                                            <i class="bi bi-chat-bubble"></i>
+                                            <span></span>
+                                        </button>
+                                    </li>
+                                </ul>
+                              </article>
+                              {{/each}}
+                          </div>
+
+                          <div class="card">
+                            <article class=''>
+                              <div class='card-header flex-row justify-space-between'>
+                            <div class="post-title d-flex align-items-center">
+                                <div class="posted-author">
+                                    <h6 class="author"><a href="/post/{{id}}">Bobby Lee</a></h6>
+                                </div>
+                            </div>
+                                <div>
+                                  Goal:
+                                  Weight Loss
+                                  on
+                                  11.12.21
+                                </div>
+                              </div>
+                              <div class='card-body'>
+                                oi mate i lost 200 lb 
+                              </div>
+                              <ul class="comment-share-meta">
+                                <li>
+                                    <button class="post-comment">
+                                        <i class="bi bi-chat-bubble"></i>
+                                        <span></span>
+                                    </button>
+                                </li>
+                            </ul>
+                            </article>
+                        </div>
+                        
+                          
+                        
+
+                        
+                        
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
