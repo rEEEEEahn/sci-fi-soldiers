@@ -4,8 +4,28 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>{{title}}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel='stylesheet' href='/css/style.css' />
+    <!-- CSS
+	============================================ -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/vendor/bootstrap.min.css">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="../css/vendor/bicon.min.css">
+    <!-- Flat Icon CSS -->
+    <link rel="stylesheet" href="../css/vendor/flaticon.css">
+    <!-- audio & video player CSS -->
+    <link rel="stylesheet" href="../css/plugins/plyr.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="../css/plugins/slick.min.css">
+    <!-- nice-select CSS -->
+    <link rel="stylesheet" href="../css/plugins/nice-select.css">
+    <!-- perfect scrollbar css -->
+    <link rel="stylesheet" href="../css/plugins/perfect-scrollbar.css">
+    <!-- light gallery css -->
+    <link rel="stylesheet" href="../css/plugins/lightgallery.min.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <nav>
@@ -21,6 +41,28 @@
     {{#if isLoggedIn}}
       <script src='/js/logout.js'></script>
     {{/if}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- All js here -->
+        <!-- jquery modernizr version -->
+        <script src="../js/vendor/modernizr-3.6.0.min.js"></script>
+        <!-- jquery latest version -->
+        <script src="../js/vendor/jquery-3.3.1.min.js"></script>
+        <!-- Popper js -->
+        <script src="../js/vendor/popper.min.js"></script>
+        <!-- Bootstrap framework js -->
+        <script src="../js/vendor/bootstrap.min.js"></script>
+        <!-- slick slider plugin js -->
+        <script src="../js/plugins/slick.min.js"></script>
+        <!-- plyr plugin js -->
+        <script src="../js/plugins/plyr.min.js"></script>
+        <!-- perfect-scrollbar plugins js -->
+        <script src="../js/plugins/perfect-scrollbar.min.js"></script>
+        <!-- lightgallery plugins js -->
+        <script src="../js/plugins/lightgallery-all.min.js"></script>
+        <!-- imagesloaded plugins js -->
+        <script src="../js/plugins/imagesloaded.pkgd.min.js"></script>
+        <!-- isotope plugins js -->
+        <script src="../js/plugins/isotope.pkgd.min.js"></script>
+        <!-- Main js file that contents all jQuery plugins activation. -->
+        <script src="../js/main.js"></script>
   </body>
 </html>
