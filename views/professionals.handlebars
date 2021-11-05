@@ -1,19 +1,18 @@
 <h1>Professional Profiles</h1>
-<div class="friends-section mt-20">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="content-box friends-zone">
-          <div class="row mt--20 friends-list" style="position: relative; height: 4600px;">
-            <div class="col-lg-3 col-sm-6 recently request" style="position: absolute; left: 0px; top: 0px;">
-            {{#each users as |user|}}
-            {{> userdetails }}
-            {{/each}}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+{{#each professionals}}
+<p>Professional ID: {{id}}</p>
+<p>Calendly: {{calendly}}</p>
+<p>Bio: {{bio}}</p>
+<h2>User Data</h2>
+<p>Username: {{user.username}}</p>
+<p>First Name: {{user.first_name}}</p>
+<p>Last Name: {{user.last_name}}</p>
+<p>City: {{user.city}}</p>
+<p>State: {{user.state}}</p>
+<h2>Services</h2>
+{{#each professional_services}}
+<p>{{service.name}}</p>
+{{/each}}
+{{else}}
+<p class="empty">No content</p>
+{{/each}}

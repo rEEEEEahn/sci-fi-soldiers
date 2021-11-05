@@ -10,5 +10,17 @@
   {
     "professional_id": "3",
     "services_id": "2"
+  },
+  {
+    "professional_id": "1",
+    "services_id": "2"
+  },
+  {
+    "professional_id": "1",
+    "services_id": "5"
+  },
+  {
+    "professional_id": "1",
+    "services_id": "7"
   }
 ]

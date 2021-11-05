@@ -19,6 +19,10 @@ Professional.init(
     calendly: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    bio: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   },
   {
