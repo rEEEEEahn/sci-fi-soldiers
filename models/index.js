@@ -102,6 +102,17 @@ User.hasMany(Comment, {
   onDelete: 'CASCADE',
 });
 
+//one to many relationship with Comment(child) to User(parent)
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
+
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
+
 //one to many relationship with Questions(child) to GoalType(parent)
 Question.belongsTo(GoalType, {
   foreignKey: 'goal_type_id',
@@ -131,6 +142,15 @@ Question.belongsToMany(Post, {
   as: "question_answer_post"
 });
 
+//one to one relations with PostQuestionAnswer(child) to Post(parent)
+PostQuestionAnswer.belongsTo(Post, {
+  foreignKey: 'post_id'
+});
+
+Post.hasMany(PostQuestionAnswer, {
+  foreignKey: 'post_id'
+});
+
 //one to many relationship with User(child) to Role(parent)
 User.belongsTo(Role, {
   foreignKey: 'role_id'
@@ -157,6 +177,15 @@ Services.belongsToMany(Professional, {
   as: "services_professional"
 });
 
+//one to one relations with ClientServices(child) to Client(parent)
+ProfessionalServices.belongsTo(Professional, {
+  foreignKey: 'professional_id'
+});
+
+Professional.hasMany(ProfessionalServices, {
+  foreignKey: 'professional_id'
+});
+
 // many to many relations with Client() to Services() through ClientServices
 Client.belongsToMany(Services, {
   through: {
@@ -174,5 +203,31 @@ Services.belongsToMany(Client, {
   as: "services_client"
 });
 
+//one to many relations with ClientServices(child) to Client(parent)
+ClientServices.belongsTo(Client, {
+  foreignKey: 'client_id'
+});
+
+Client.hasMany(ClientServices, {
+  foreignKey: 'client_id'
+});
+
+//one to many relations with ClientServices(child) to Services(parent)
+ClientServices.belongsTo(Services, {
+  foreignKey: 'services_id'
+});
+
+Services.hasMany(ClientServices, {
+  foreignKey: 'services_id'
+});
+
+//one to many relations with ClientServices(child) to Services(parent)
+ProfessionalServices.belongsTo(Services, {
+  foreignKey: 'services_id'
+});
+
+Services.hasMany(ProfessionalServices, {
+  foreignKey: 'services_id'
+});
 
 module.exports = { User, Services, Role, ProfessionalServices, Professional, GoalType, Goal, ClientServices, Client, Post, Comment, Question, PostQuestionAnswer };

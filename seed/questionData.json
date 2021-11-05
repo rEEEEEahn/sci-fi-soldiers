@@ -5,6 +5,11 @@
     "goal_type_id": "2"
   },
   {
+    "question": "On a scale of 1-10, how much pain are you feeling?",
+    "question_type": "setup",
+    "goal_type_id": "2"
+  },
+  {
     "question": "What do you weigh today?",
     "question_type": "setup",
     "goal_type_id": "1"
