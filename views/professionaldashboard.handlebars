@@ -57,15 +57,15 @@
                                 <div class='card-header flex-row justify-space-between'>
                             <div class="post-title d-flex align-items-center">
                                 <div class="posted-author">
-                                    <h6 class="author"><a href="/post/{{id}}">{{username}}</a></h6>    <!--CHANGE HREF TO protfile link-->
+                                    <h6 class="author"><a href="/post/{{id}}">{{goal.client.user.first_name}}</a></h6>    <!--CHANGE HREF TO protfile link-->
                                 </div>
                             </div>
 <!--add comment button-->
                                   <div>
                                     goal
-                                    {{goals}}
+                                    {{goal.id}}
                                     on
-                                    {{format_date createdAt}}
+                                    {{date}}
                                   </div>
                                 </div>
                                 <div class='card-body'>
