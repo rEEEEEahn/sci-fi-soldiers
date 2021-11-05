@@ -1,0 +1,23 @@
+<h1>Professional Dashboard</h1>
+<h2>Professional Info</h2>
+<p>Professional ID: {{id}}</p>
+<p>Calendly: {{calendly}}</p>
+<p>Bio: {{bio}}</p>
+<h2>User Info</h2>
+<p>First Name: {{user.first_name}}</p>
+<p>Last Name: {{user.last_name}}</p>
+<p>City: {{user.city}}</p>
+<p>State: {{user.state}}</p>
+<h2>Professional Services</h2>
+{{#each professional_services}}
+<p>{{service.name}}</p>
+{{/each}}
+<h2>Goals</h2>
+{{#each goals}}
+<p>Client First Name: {{client.user.first_name}}</p>
+<p>Client Last Name: {{client.user.last_name}}</p>
+<p>Goal Type: {{goal_type.name}}</p>
+<p>Goal Name: {{name}}</p>
+<p>Client's Current Weight: {{posts.[0].post_question_answers.[0].answer}}</p>
+{{/each}}
+

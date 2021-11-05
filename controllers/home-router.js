@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Goal, Client, Post, PostQuestionAnswer, Comment, ClientServices, Services } = require("../models");
+const { User, Goal, Client, Post, PostQuestionAnswer, Comment, ClientServices, Services, Professional, ProfessionalServices, GoalType } = require("../models");
 
 // use withAuth middleware to redirect from protected routes.
 const withAuth = require("../util/withAuth");
@@ -33,25 +33,44 @@ router.get("/signup", (req, res) => {
 });
 
 //professsional routes
-router.get("/professionals/:id", async (req, res) => {
+//professional profile - get one professional with user data
+router.get("/professionals/:prof_id", async (req, res) => {
   try {
-    const userData = await User.findByPk(req.params.id);
-    console.log(userData);
-    const professionalData = userData.get({ plain: true });
-    res.render("professionalprofile", professionalData);
+    const professionalData = await Professional.findByPk(req.params.prof_id, {
+      include: [User, {model: ProfessionalServices, include: Services}]});
+    const professional = professionalData.get({ plain: true });
+    console.log(professional,null,2);
+    res.render("professionalprofile", professional);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 router.get("/professionals", async (req, res) => {
-  const userData = await User.findAll();
-  const professionalData = userData.map((professionalData) =>
-    professionalData.get({ plain: true })
+  const professionalData = await Professional.findAll({
+    include: [User, {model: ProfessionalServices, include: Services}]
+  });
+  const professionals = professionalData.map((professionals) =>
+  professionals.get({ plain: true })
   );
-  console.log(professionalData);
-  res.render("professionals", { users: professionalData });
+  console.log(JSON.stringify(professionals,null,2));
+  res.render("professionals", { professionals });
 });
+
+// GET 	/dashboard		auth	dashboard for logged in  for professionals
+router.get("/dashboard/:prof_id", withAuth, async (req, res) => {
+  try {
+    const professionalData = await Professional.findByPk(req.params.prof_id,{
+      include: [User,{model: ProfessionalServices, include: Services},{model: Goal, include: [GoalType, {model: Post, include: PostQuestionAnswer}, {model: Client, include: User}]}]
+    });
+    const professional = professionalData.get({ plain: true });
+    console.log(JSON.stringify(professionalData, null, 2));
+    res.render("dashboard", professional);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // GET 	/new-goal/?clientid={{id}}		auth	Form to allow a client to add a goal. Must be logged
 // GET 	/new-goal?		auth	Form to allow a client to add a goal. Must be logged
@@ -68,17 +87,6 @@ router.get("/new-goal", withAuth, async (req, res) => {
   }
 });
 
-// GET 	/dashboard		auth	dashboard for logged in pro
-router.get("/dashboard/id", withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.params.id);
-    const clientData = userData.get({ plain: true });
-    console.log(JSON.stringify(clientData, null, 2));
-    res.render("dashboard", clientData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 // GET 	/goal/:id		auth	displays page for a specific goal
 router.get("/goals/:goal_id", withAuth, async (req, res) => {
@@ -109,21 +117,12 @@ router.get("/client/:client_id", withAuth, async (req, res) => {
 
     const client = clientData.get({ plain: true });
     console.log(JSON.stringify(client, null, 2));
-    // const currentWeight = goal.posts[0].post_question_answers[0].answer;
-    // console.log({ currentWeight });
     res.render("clientprofile", { client });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/client", async (req, res) => {
-  const userData = await User.findAll();
-  const clientData = userData.map((clientData) =>
-    clientData.get({ plain: true })
-  );
-  console.log(clientData);
-  res.render("clientprofile", { users: clientData });
-});
+
 
 module.exports = router;

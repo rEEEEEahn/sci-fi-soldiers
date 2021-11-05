@@ -1,6 +1,4 @@
-
-    <!-- header area start -->
-    <header>
+<header>
         <div class="header-top sticky bg-white d-none d-lg-block">
             <div class="container">
                 <div class="row align-items-center">
@@ -43,11 +41,11 @@
     </header>
     <!-- header area end -->
 
-    <main>
+
 
         <div class="main-wrapper">
             <!-- profile banner area start -->
-            <div class="profile-banner-large bg-img" data-bg="/images/banner-pic.png">
+            <div class="profile-banner-large bg-img" data-bg="/images/banner/profile-banner.jpg">
             </div>
             <!-- profile banner area end -->
 
@@ -59,7 +57,8 @@
                             <div class="profile-picture-box">
                                 <figure class="profile-picture">
                                     <a href="profile.html">
-                                        <img src="/images/dummy_profile_pic.jpg" alt="profile picture">                                    </a>
+                                        <img src="/images/profile/profile-1.jpg" alt="profile picture">
+                                    </a>
                                 </figure>
                             </div>
                         </div>
@@ -76,11 +75,13 @@
                                 <h4 class="widget-title">{{username}}</h4>
                                 <div class="widget-body">
                                     <div class="about-author">
-                                        <p>{{username}}</p>
+                                        <p>{{user.username}}</p>
+                                        <p>{{user.first_name}}</p>
+                                        <p>{{user.last_name}}</p>
                                         <ul class="author-into-list">
-                                            <li><a href="#"><i class="bi bi-office-bag"></i>Service Type: Trainer</a></li>
-                                            <li><a href="#"><i class="bi bi-location-pointer"></i>San Diego</a></li>
-                                            <li><a href="#"><i class="bi bi-heart-beat"></i>Website</a></li>
+                                            <li><a href="#"><i class="bi bi-office-bag"</i>{{#each professional_services}}<p>{{service.name}}</p>{{/each}}</a></li>
+                                            <li><a href="#"><i class="bi bi-location-pointer"></i>{{user.city}}{{user.state}}</a></li>
+                                            
                                         </ul>
                                     </nav>
                                 </div>
@@ -101,7 +102,7 @@
                                 <div class="about-me">
                                     <ul class="nav flex-column about-author-menu">
                                         <li><a href="#one" data-bs-toggle="tab" class="active">General</a></li>
-                                        <li><a href="#two" data-bs-toggle="tab">Bio</a></li>
+                                        <li><a href="#two" data-bs-toggle="tab">{{bio}}</a></li>
                                         <li><a href="#three" data-bs-toggle="tab">Qualification</a></li>
                                     </ul>
                                 </div>
@@ -160,11 +161,11 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="content-box">
-                                <h5 class="content-title">CALENDLY</h5>
+                                <h5 class="content-title">CALENDLY {{calendly}}</h5>
                                 <div class="content-body">  
                                     <!-- Calendly inline widget begin -->
                                     <div class="calendly-inline-widget" style="min-width:320px;height:580px;" data-auto-load="false">
-                                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                                        <script type="text/javascript" src="https://.calendly.com//external/widget.js"></script>
                                         <script>
                                             Calendly.initInlineWidget({
                                             url: 'https://calendly.com/stan1651'
@@ -181,4 +182,3 @@
         
             
         </div>
-

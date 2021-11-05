@@ -1,14 +1,17 @@
 [
   {
     "user_id": "1",
-    "calendly": "https://calendly.com/yourname"
-  },
-  {
-    "user_id": "2",
-    "calendly": "https://calendly.com/hisname"
+    "calendly": "https://calendly.com/yourname",
+    "bio": "I have been training people for years and I'm the best."
   },
   {
     "user_id": "3",
-    "calendly": "https://calendly.com/hername"
+    "calendly": "https://calendly.com/hisname",
+    "bio": "I love fitness and will make you love it too."
+  },
+  {
+    "user_id": "4",
+    "calendly": "https://calendly.com/hername",
+    "bio": "I was born in the desert, raised in the lion's den."
   }
 ]
