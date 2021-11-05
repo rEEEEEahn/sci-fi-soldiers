@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Goal } = require('../models');
 
 // use withAuth middleware to redirect from protected routes.
 const withAuth = require("../util/withAuth");
@@ -53,20 +53,69 @@ router.get("/professionals", async (req, res) => {
 
  
   // GET 	/new-goal/?clientid={{id}}		auth	Form to allow a client to add a goal. Must be logged 
-  router.get("/new-goal", withAuth, async (req, res) => {
-    res.end();
-  });
+  // GET 	/new-goal?		auth	Form to allow a client to add a goal. Must be logged 
+  router.get("/goals", withAuth, async (req, res) => {
+    try{
+      const userData = await User.findByPk(req.session.userId, {
+        attributes: {exclude:["password"]},
+      });
+      console.log(userData);
+      const clientData = userData.get({ plain: true });
+      res.render('goals', clientData);
+    } catch (err) { 
+      res.status(500).json(err);
+    }
+  })
+     
   // GET 	/dashboard		auth	dashboard for logged in pro
-  router.get("/dashboard", withAuth, async (req, res) => {
-    res.end();
+  router.get("/dashboard/id", withAuth, async (req, res) => {
+    try {
+      const userData = await User.findByPk(req.params.id);
+      console.log(userData);
+      const clientData = userData.get({ plain: true });
+      res.render('dashboard', clientData);
+    } catch (err) { 
+      res.status(500).json(err);
+    }
   });
   // GET 	/goal/:id		auth	displays page for a specific goal
-  router.get("/goal/:id", withAuth, async (req, res) => {
-    res.end();
+  router.get("/goals/:goal_id", withAuth, async (req, res) => {
+    try {
+      const goalData = await Goal.findByPk(req.params.goal_id, {
+        include: [
+          { model: Client, include: User },
+          { model: Post, order: ["date", "DESC"], include: [PostQuestionAnswer, {model: Comment, include: User}] },
+        ],
+      });
+  
+      const goal = goalData.get({ plain: true });
+      console.log(JSON.stringify(goal, null, 2));
+      const currentWeight = goal.posts[0].post_question_answers[0].answer;
+      console.log({ currentWeight });
+      res.render("goal", { goal, currentWeight });
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
+  
   // GET 	/client			auth	displays client goals and info for logged in client
-  router.get("/client", withAuth, async (req, res) => {
-    res.end();
+  router.get("/client/id", withAuth, async (req, res) => {
+    try {
+      const userData = await User.findByPk(req.params.id);
+      console.log(userData);
+      const clientData = userData.get({ plain: true });
+      res.render('clientprofile', clientData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
+  
+  router.get("/client", async (req, res) => {
+      const userData = await User.findAll();
+      const clientData = userData.map((clientData) => clientData.get({ plain: true }));
+      console.log(clientData);
+      res.render('clientprofile', {users:clientData});
+    });
+    
 
 module.exports = router;
