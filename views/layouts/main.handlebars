@@ -28,9 +28,10 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <nav>
+    <nav class="active">
       <a href='/'>Home</a>
       {{#if isLoggedIn}}
+        <button class='btn btn-logout' href="/dashboard">Dashboard</button>
         <button class='btn btn-logout'>Log Out</button>
       {{else}}
         <a href='/login'>login</a>
