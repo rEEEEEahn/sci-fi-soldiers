@@ -1,0 +1,42 @@
+<h1>My Goal Page</h1>
+<div class="friends-section mt-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="content-box friends-zone">
+          <div class="row mt--20 friends-list" style="position: relative; height: 4600px;">
+            <div class="col-lg-3 col-sm-6 recently request" style="position: absolute; left: 0px; top: 0px;"></div>
+    <p>Goal Name: {{goal.name}}</p>
+    <p>Goal ID: {{goal.id}}</p>
+    <p>Current Weight: {{currentWeight}}</p>
+    <p>First Name:{{goal.client.user.first_name}}</p>
+    <p>Last Name:{{goal.client.user.last_name}}</p>
+    <h2>Posts</h2>
+    {{#each goal.posts}}
+    <p>Post ID{{id}}</p>
+    <p>Post Date: {{date}}</p>
+    <p>Post Weight {{post_question_answers.[0].answer}}</p>
+    <h3>Comments</h3>
+    {{#each comments}}
+    <p>{{body}}</p>
+    <p>{{date}}</p>
+    <p>{{user.first_name}}</p>
+
+    {{!-- Body of comment, first name --}}
+    {{/each}}
+    {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+
+
+
+
+

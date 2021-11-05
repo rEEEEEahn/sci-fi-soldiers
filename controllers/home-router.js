@@ -79,19 +79,24 @@ router.get("/professionals", async (req, res) => {
     }
   });
   // GET 	/goal/:id		auth	displays page for a specific goal
-  router.get("/goals/:id", withAuth, async (req, res) => {
-      try {
-        const goalData = await Goal.findAll({
-          include: [User],
-        });
-    
-        const goals = goalData.map((goal) => goal.get({ plain: true }));
-    
-        res.render('all-goals', { goals });
-      } catch (err) {
-        res.status(500).json(err);
-      }
-    });
+  router.get("/goals/:goal_id", withAuth, async (req, res) => {
+    try {
+      const goalData = await Goal.findByPk(req.params.goal_id, {
+        include: [
+          { model: Client, include: User },
+          { model: Post, order: ["date", "DESC"], include: [PostQuestionAnswer, {model: Comment, include: User}] },
+        ],
+      });
+  
+      const goal = goalData.get({ plain: true });
+      console.log(JSON.stringify(goal, null, 2));
+      const currentWeight = goal.posts[0].post_question_answers[0].answer;
+      console.log({ currentWeight });
+      res.render("goal", { goal, currentWeight });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
   
   // GET 	/client			auth	displays client goals and info for logged in client
   router.get("/client/id", withAuth, async (req, res) => {
