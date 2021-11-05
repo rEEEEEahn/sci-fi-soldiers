@@ -3,7 +3,6 @@
     "post_id": "1",
     "question_id": "2",
     "answer": "215"
-
   },
   {
     "post_id": "2",
@@ -14,5 +13,25 @@
     "post_id": "3",
     "question_id": "1",
     "answer": "5"
+  },
+  {
+    "post_id": "4",
+    "question_id": "2",
+    "answer": "5"
+  },
+  {
+    "post_id": "5",
+    "question_id": "3",
+    "answer": "4"
+  },
+  {
+    "post_id": "6",
+    "question_id": "4",
+    "answer": "213"
+  },
+  {
+    "post_id": "7",
+    "question_id": "2",
+    "answer": "7"
   }
 ]

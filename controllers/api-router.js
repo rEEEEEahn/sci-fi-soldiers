@@ -1,9 +1,9 @@
-const { User, Goal, Comment, Post } = require("../models");
+const { User, Goal, Comment, Post, PostQuestionAnswer } = require("../models");
 const withAuth = require("../util/withAuth");
 
 const router = require("express").Router();
 
-// POST /api/users	create user, client or profession and login
+// POST /api/users 			create user, client or profession and login
 router.post("/users", async (req, res) => {
   const { username, password } = req.body;
   try {

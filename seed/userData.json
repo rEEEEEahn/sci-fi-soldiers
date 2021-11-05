@@ -31,5 +31,93 @@
     "state": "CA",
     "zip": "92109",
     "role_id": "1"
+  },
+  {
+    "username": "tom",
+    "password": "password123",
+    "first_name": "Tom",
+    "last_name": "Watts",
+    "email": "tw@email.com",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90211",
+    "role_id": "1"
+  },
+  {
+    "username": "tina",
+    "password": "password123",
+    "first_name": "Tina",
+    "last_name": "Watts",
+    "email": "twatts@email.com",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90211",
+    "role_id": "1"
+  },
+  {
+    "username": "stimpy",
+    "password": "password123",
+    "first_name": "Stimpy",
+    "last_name": "Cat",
+    "email": "stimpcat@email.com",
+    "city": "Carlsbad",
+    "state": "CA",
+    "zip": "92148",
+    "role_id": "1"
+  },
+  {
+    "username": "ren",
+    "password": "password123",
+    "first_name": "Ren",
+    "last_name": "Chihuahua",
+    "email": "rendoggydogg@gmail.com",
+    "city": "Carlsbad",
+    "state": "CA",
+    "zip": "92148",
+    "role_id": "1"
+  },
+  {
+    "username": "tammy",
+    "password": "password123",
+    "first_name": "Tammy",
+    "last_name": "Laughler",
+    "email": "mynameistam@email.com",
+    "city": "Wayne",
+    "state": "IN",
+    "zip": "34554",
+    "role_id": "1"
+  },
+  {
+    "username": "hugh",
+    "password": "password123",
+    "first_name": "Hugh",
+    "last_name": "Betcha",
+    "email": "hughbet@hotmail.com",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89451",
+    "role_id": "2"
+  },
+  {
+    "username": "Sam",
+    "password": "password123",
+    "first_name": "Sammy",
+    "last_name": "Labra",
+    "email": "samuellabra@hotmail.com",
+    "city": "Concord",
+    "state": "MA",
+    "zip": "01245",
+    "role_id": "1"
+  },
+  {
+    "username": "paul",
+    "password": "password123",
+    "first_name": "Paul",
+    "last_name": "Isdead",
+    "email": "mccartney@hotmail.com",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89454",
+    "role_id": "2"
   }
 ]

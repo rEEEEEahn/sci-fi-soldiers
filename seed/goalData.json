@@ -16,5 +16,11 @@
     "goal_type_id": "2",
     "client_id": "3",
     "professional_id": "2"
+  },
+  {
+    "name": "Lose half my body weight",
+    "goal_type_id": "1",
+    "client_id": "3",
+    "professional_id": "2"
   }
 ]
