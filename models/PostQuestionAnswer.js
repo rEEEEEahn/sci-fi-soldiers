@@ -23,6 +23,10 @@ PostQuestionAnswer.init(
     answer: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    answer_after: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   },
   

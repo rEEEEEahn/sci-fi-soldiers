@@ -1,4 +1,4 @@
-const { User, Goal, Comment, Post, PostQuestionAnswer } = require("../models");
+const { User, Goal, Comment, Post } = require("../models");
 const withAuth = require("../util/withAuth");
 
 const router = require("express").Router();
@@ -64,12 +64,29 @@ router.get("/users/logout", (req, res) => {
 router.post("/goals", withAuth, async (req, res) => {
     const { body } = req;
     try {
-      const newGoal = await Goal.create({ ...body, userId: req.session.userId });
+      const newGoal = await Goal.create({
+        "name": body.name,
+        "goal_type_id": body.goal_type_id,
+        "client_id": body.client_id,
+        "professional_id": body.professional_id
+      });
       res.json(newGoal);
     } catch (err) {
+      console.log(err)
       res.status(500).json(err);
     }
 });
+
+router.get("/allgoals", withAuth, async (req, res) => {
+    try {
+    const allGoals = await Goal.findAll();
+    console.log(allGoals)
+    res.json(allGoals);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // POST 	/api/posts		auth	creates a new post
 router.post("/posts", withAuth, async (req, res) => {
