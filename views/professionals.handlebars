@@ -1,15 +1,17 @@
 <h1>Professional Profiles</h1>
+
 {{#each professionals}}
+<h4>Professional Data</h4>
 <p>Professional ID: {{id}}</p>
 <p>Calendly: {{calendly}}</p>
 <p>Bio: {{bio}}</p>
-<h2>User Data</h2>
-<p>Username: {{user.username}}</p>
+<h6>User Data</h6>
+<p><a href="/professionals/{{id}}">Username: {{user.username}}</a></p>
 <p>First Name: {{user.first_name}}</p>
 <p>Last Name: {{user.last_name}}</p>
 <p>City: {{user.city}}</p>
 <p>State: {{user.state}}</p>
-<h2>Services</h2>
+<h6>Services</h6>
 {{#each professional_services}}
 <p>{{service.name}}</p>
 {{/each}}

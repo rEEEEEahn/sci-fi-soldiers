@@ -15,6 +15,14 @@ GoalType.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    answer_after: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   },
   {

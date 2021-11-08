@@ -17,7 +17,6 @@
 <p>Client First Name: {{client.user.first_name}}</p>
 <p>Client Last Name: {{client.user.last_name}}</p>
 <p>Goal Type: {{goal_type.name}}</p>
-<p>Goal Name: {{name}}</p>
+<p>Goal Name: <a href="/goals/{{id}}">{{name}}</a></p>
 <p>Client's Current Weight: {{posts.[0].post_question_answers.[0].answer}}</p>
 {{/each}}
-

@@ -1,8 +1,12 @@
 [
   {
-    "name": "Weight Loss"
+    "name": "Weight Loss",
+    "status": "Current Weight",
+    "answer_after": "pounds"
   },
   {
-    "name": "Pain Management"
+    "name": "Pain Management",
+    "status": "Current Pain Level",
+    "answer_after": "pain level"
   }
 ]

@@ -1,66 +1,35 @@
-<header>
-    <div class="header-top sticky bg-white d-none d-lg-block">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-5">
-                    <!-- header top navigation start -->
-                    <div class="header-top-navigation">
-                        <nav>
-                            <ul>
-                                <li class="active"><a href="profile.html">home</a></li>     <!--NEED CHNAGE HREF-->
-                                <li class="active"><a href="profile.html">Dashboard</a></li>
-                                <li><a href="signup.html">Sign Out</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- header top navigation start -->
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- header area end -->
-<!-- header area start -->
-<header>
-    <div class="mobile-header-wrapper sticky d-block d-lg-none">
-        <div class="mobile-header position-relative ">
-            <div class="mobile-menu w-100">
-                <ul>
-                    <div class="header-top-navigation">
-                        <nav>
-                            <ul>
-                                <li class="active"><a href="index.html">home</a></li>  <!--NEED CHNAGE HREF-->
-                                <li class="active"><a href="index.html">Dashboard</a></li>
-                                <li><a href="signup.html">Sign Out</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- header area end -->
+<h2>{{client.user.first_name}}, Congratulations on deciding to set a goal! This
+  is a very important first step.</h2>
 
-                            <div class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-center">
-                            <div class="signup-form-wrapper">
-                                <h1 class="create-acc text-center"></h1>
-                                <div class="signup-inner text-center">
-                                    <h3 class="title">New Goal</h3>
-                                    <form class="signup-inner--form">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <select class="nice-select" name="sortby" id="profession-input-signup">
-                                                    <option value="">Goal Type</option>
-                                                    <option value="Weight Loss">Weight Loss</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-12">
-                                                <input type="text" class="single-field" id="goal-newgoal" placeholder="Goal">
-                                            </div>
-                                            <div class="col-12">
-                                                <input type="text" class="single-field" id='currnet-newgoal' placeholder="Current Weight">
-                                            </div>
-                                            <div class="col-12">
-                                                <button class="submit-btn" id='submit-btn'>Submit</button>
-                                            </div>
+<form class="new_goal_form">
+
+  <p><label for="name">In a few words, describe your new goal.</label></p>
+  <p><input
+      type="text"
+      class="single-field"
+      id="name"
+      name="name"
+    /></p>
+
+  <p><label for="goal_type_id">What type of goal is it?</label></p>
+  <p><select class="nice-select" id="goal_type_id" name="goal_type_id">
+      <option value=""> - Select a goal type - </option>
+      {{#each goalTypes}}
+        <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select></p>
+
+  <p><label for="professional_id">Who would you like to work with?</label></p>
+  <p><select class="nice-select" id="professional_id" name="professional_id">
+      <option value=""> - Choose a professional - </option>
+      {{#each professionals}}
+        <option value="{{id}}">{{user.first_name}} {{user.last_name}}</option>
+      {{/each}}
+    </select></p>
+
+  <input type="hidden" id="client_id" name="client_id" value="{{client.id}}" />
+
+  <button class="submit-btn" id="submit-btn">Submit</button>
+</form>
+
+<script src="/js/goal.js"></script>

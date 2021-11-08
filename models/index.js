@@ -151,6 +151,17 @@ Post.hasMany(PostQuestionAnswer, {
   foreignKey: 'post_id'
 });
 
+//one to many relationship with PostQuestionAnswer(child) to Question(parent)
+PostQuestionAnswer.belongsTo(Question, {
+  foreignKey: 'question_id'
+});
+
+Question.hasMany(PostQuestionAnswer, {
+  foreignKey: 'question_id'
+});
+
+
+
 //one to many relationship with User(child) to Role(parent)
 User.belongsTo(Role, {
   foreignKey: 'role_id'
